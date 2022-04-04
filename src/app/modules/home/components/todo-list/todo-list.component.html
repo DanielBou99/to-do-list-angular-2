@@ -3,7 +3,7 @@
     <li *ngFor="let item of taskList; let i = index">
       <input type="checkbox" [(ngModel)]="item.checked" />
       <input type="text" [(ngModel)]="item.task" />
-      <button>
+      <button (click)="teleteItemTaskList(i)">
         <img
           src="../../../../../assets/icons/icon-trash.svg"
           alt="Botão Excluir"
@@ -15,4 +15,5 @@
 <app-todo-input-add-itens></app-todo-input-add-itens>
 <app-todo-button-delete-all
   *ngIf="taskList.length"
+  (click)="deletaAllTaskList()"
 ></app-todo-button-delete-all>
